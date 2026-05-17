@@ -1,0 +1,12 @@
+node_modules
+dist
+.cache
+.env
+.vercel
+.output
+.git
+.gitignore
+*.md
+.vscode
+.devcontainer
+.DS_Store
