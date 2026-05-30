@@ -1,21 +1,28 @@
-import { Link } from "@tanstack/react-router";
 import { ModeToggle } from "../mode-toggle";
+
+const navItems = [
+  { key: "h", label: "home", href: "/" },
+  { key: "w", label: "work", href: "#work" },
+  { key: "p", label: "projects", href: "#projects" },
+  { key: "s", label: "skills", href: "#skills" },
+];
 
 export function NavBar() {
   return (
-    <div className="p-2 flex gap-2 text-lg justify-between">
-      <div className="flex gap-2">
-        <Link
-          to="/"
-          activeProps={{
-            className: "font-bold text-primary-foreground",
-          }}
-          activeOptions={{ exact: true }}
-        >
-          Home
-        </Link>
+    <nav className="flex items-center justify-between mb-12 text-sm">
+      <div className="flex space-x-1 sm:space-x-4">
+        {navItems.map((item) => (
+          <a
+            key={item.key}
+            href={item.href}
+            className="hover:text-primary transition-colors duration-200 py-2 px-1.5 sm:px-0 sm:py-0"
+          >
+            <span className="hidden sm:inline">[{item.key}] </span>
+            {item.label}
+          </a>
+        ))}
       </div>
-      <ModeToggle></ModeToggle>
-    </div>
+      <ModeToggle />
+    </nav>
   );
 }

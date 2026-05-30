@@ -32,8 +32,8 @@ export const Route = createRootRouteWithContext<{
         content: "width=device-width, initial-scale=1",
       },
       ...seo({
-        title: "Dymple",
-        description: `Welcome to Yoga personal website`,
+        title: "Yoga Permana",
+        description: `Full-stack software engineer — React, Go, TypeScript. Building things that matter.`,
       }),
     ],
     links: [
