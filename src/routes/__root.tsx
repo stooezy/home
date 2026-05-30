@@ -1,7 +1,6 @@
 /// <reference types="vite/client" />
 import {
   HeadContent,
-  Link,
   Outlet,
   Scripts,
   createRootRouteWithContext,
@@ -33,7 +32,11 @@ export const Route = createRootRouteWithContext<{
       },
       ...seo({
         title: "Yoga Permana",
-        description: `Full-stack software engineer — React, Go, TypeScript. Building things that matter.`,
+        description: `Yoga Permana — Full-stack software engineer with 7+ years of experience in React, Go, TypeScript, and mobile development. Building performant web apps, backend services, and Android applications. Based in Cimahi, Indonesia.`,
+        image: "/og-image.svg",
+        twitter: "@yopernurr",
+        keywords:
+          "software engineer, full-stack developer, react, go, typescript, indonesia, portfolio",
       }),
     ],
     links: [
@@ -92,8 +95,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="min-h-dvh bg-background">
         {children}
-        <TanStackRouterDevtools position="bottom-right" />
-        <ReactQueryDevtools buttonPosition="bottom-left" />
+        {import.meta.env.DEV && (
+          <>
+            <TanStackRouterDevtools position="bottom-right" />
+            <ReactQueryDevtools buttonPosition="bottom-left" />
+          </>
+        )}
         <Scripts />
       </body>
     </html>

@@ -1,42 +1,30 @@
-# TanStack Start - Basic React Query Example
+# Yoga Permana — Portfolio
 
-A TanStack Start example demonstrating integration with TanStack Query (React Query).
+Personal portfolio and resume site built with modern tooling. Showcases work experience, projects, and skills.
 
-- [TanStack Router Docs](https://tanstack.com/router)
-- [TanStack Query Docs](https://tanstack.com/query)
+**Tech stack:** TanStack Start, React 19, TypeScript, Tailwind CSS v4, shadcn/ui
 
-## Start a new project based on this example
-
-To start a new project based on this example, run:
-
-```sh
-npx gitpick TanStack/router/tree/main/examples/react/start-basic-react-query start-basic-react-query
-```
+- [yogapermana.dev](https://yogapermana.dev) (or wherever it's deployed)
 
 ## Getting Started
 
-From your terminal:
-
 ```sh
 pnpm install
-pnpm dev
+pnpm dev        # Dev server on http://localhost:3000
+pnpm build      # Production build + typecheck
+pnpm preview    # Preview production build
+pnpm start      # Production server
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+## Project Structure
 
-## Build
-
-To build the app for production:
-
-```sh
-pnpm build
+```
+src/
+  routes/          # File-based routes (TanStack Router)
+  components/      # UI primitives (shadcn/ui) + app components
+  data/            # Portfolio content — experience, projects, skills
+  utils/           # Server functions, SEO helpers
+  styles/          # Tailwind + theme variables
 ```
 
-## TanStack Query Integration
-
-This example demonstrates how to use TanStack Query with TanStack Start for:
-
-- Server-side data fetching
-- Client-side caching and synchronization
-- Optimistic updates
-- Automatic refetching
+Content lives in `src/data/portfolio.ts` — experience, projects, and skills are all defined there as typed data.
